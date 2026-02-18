@@ -1,0 +1,24 @@
+{
+  "name": "youtube-transcript-summarizer",
+  "version": "1.0.0",
+  "description": "A browser extension for extracting and summarizing YouTube video transcripts using Mistral AI",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyas369/sum-ext.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ilyas369/sum-ext/issues"
+  },
+  "homepage": "https://github.com/ilyas369/sum-ext#readme",
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
