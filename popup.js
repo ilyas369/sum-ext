@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Allow Enter key to trigger extraction
   videoUrlInput.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
+      e.preventDefault();
       extractTranscript();
     }
   });

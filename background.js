@@ -98,16 +98,18 @@ async function getYouTubeTranscript(videoId) {
 
 // Helper function to decode HTML entities
 function decodeHTMLEntities(text) {
-  const textArea = document.createElement('textarea');
-  textArea.innerHTML = text;
-  return textArea.value;
+  // Use DOMParser for safe HTML entity decoding
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, 'text/html');
+  return doc.documentElement.textContent || text;
 }
 
 // Function to summarize text using Mistral AI via Hugging Face
 async function summarizeWithMistral(text) {
   try {
     // Truncate text if too long (Mistral has token limits)
-    const maxLength = 3000; // characters
+    // Approximate character limit - actual token count varies by model and language
+    const maxLength = 3000; // approximate characters (~750 tokens)
     const textToSummarize = text.length > maxLength 
       ? text.substring(0, maxLength) + '...' 
       : text;
