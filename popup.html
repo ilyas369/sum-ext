@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Transcript Summarizer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>YouTube Transcript Summarizer</h1>
+      <p class="subtitle">Extract and summarize video transcripts with AI</p>
+    </div>
+
+    <div class="input-section">
+      <label for="videoUrl">YouTube Video URL:</label>
+      <input type="text" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." />
+      <button id="extractBtn" class="btn btn-primary">Extract Transcript</button>
+    </div>
+
+    <div id="transcriptSection" class="hidden">
+      <h3>Transcript</h3>
+      <div id="transcriptText" class="text-box"></div>
+      <button id="summarizeBtn" class="btn btn-secondary">Summarize with AI</button>
+    </div>
+
+    <div id="summarySection" class="hidden">
+      <h3>Summary</h3>
+      <div id="summaryText" class="text-box"></div>
+      <div class="export-buttons">
+        <button id="exportTxt" class="btn btn-export">Export as TXT</button>
+        <button id="exportJson" class="btn btn-export">Export as JSON</button>
+        <button id="copyBtn" class="btn btn-export">Copy to Clipboard</button>
+      </div>
+    </div>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p id="loadingText">Processing...</p>
+    </div>
+
+    <div id="error" class="hidden">
+      <p class="error-message"></p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
